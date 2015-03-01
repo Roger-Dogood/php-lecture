@@ -1,19 +1,21 @@
 <?php
-include 'Foo/Dice.php';
-
-# Creates a new instance of our Dice object.
-$dice = new Dice();
+# Procedural
+// $num_generator = mt_rand(1, 6);
+$dice = array();
 
 if (!empty($_POST['submit']))
 {
-    $dice->roll();
+    for ($i = 0; $i < 6; $i++)
+    {
+      $dice[] = mt_rand(1, 6);
+    }
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dice Test</title>
+    <title>Procedural Dice</title>
     <link rel="stylesheet" href="style.css" media="screen" charset="utf-8">
 </head>
 <body>
@@ -22,7 +24,7 @@ if (!empty($_POST['submit']))
         <h1>My Dice</h1>
 
         <div class="dice">
-            <?php foreach ($dice->getDice() as $die): ?>
+            <?php foreach ($dice as $die): ?>
             <span><?= $die; ?></span>
             <?php endforeach; ?>
         </div>
