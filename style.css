@@ -1,28 +1,72 @@
 body {
-    font-style: sans-serif;
+	font-family: sans-serif;
 }
 
 .wrapper {
-    width: 90%;
-    margin: auto;
-    font-size: 2em;
+	width: 90%;
+	margin: auto;
+	font-size: 2em;
 }
 
 .dice {
-    display: flex;
-    flex-flow: row wrap;
-    margin-bottom: 1.2em;
+	display: flex;
+	flex-flow: row wrap;
+	margin-bottom: 1.2em;
 }
 
 .dice span {
-  margin: 10px auto 0;
-  border: 1px solid #777;
-  padding: 0.8em;
-  background: #EEE;
+	margin: 10px auto 0;
+	border: 1px solid #777;
+	padding: 0.8em;
+	background: #EEE;
+	-webkit-animation: roll 0.4s;
+	animation: roll 0.4s;
+	transition: animation 0.3s,
+		    color 0.3s,
+		    background-color 0.3s,
+		    border-color 0.3s,
+		    border-style 0.3s,
+		    font-weight 0.3s;
+}
+
+.dice span:nth-child(even) {
+	-webkkit-animation-delay: 0.3s;
+	animation-delay: 0.3s;
+}
+
+.dice span:nth-child(odd) {
+	-webkit-animation-delay: 0.2s;
+	animation-delay: 0.2s;
+}
+
+.dice span:hover {
+	color: #EEE;
+	background: coral;
+	border-color: crimson;
+	border-style: dotted;
+	font-weight: bolder;
 }
 
 .roll-dice button {
-    display: block;
-    margin: auto;
-    font-size: 2em;
+	display: block;
+	margin: auto;
+	font-size: 2em;
+}
+
+@-webkit-keyframes roll {
+	from {
+		transform: rotate(0.5turn);
+	}
+	to {
+		transform: rotate(1turn);
+	}
+}
+
+@keyframes roll {
+	from {
+		transform: rotate(0.5turn);
+	}
+	to {
+		transform: rotate(1turn);
+	}
 }
