@@ -1,6 +1,5 @@
 body {
     font-style: sans-serif;
-    /*font-size: 10px;*/
 }
 
 .wrapper {
@@ -16,10 +15,10 @@ body {
 }
 
 .dice span {
-margin: auto;
-border: 1px solid #777;
-padding: 0.8em;
-background: #EEE;
+  margin: auto;
+  border: 1px solid #777;
+  padding: 0.8em;
+  background: #EEE;
 }
 
 .roll-dice button {
