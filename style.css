@@ -1,0 +1,29 @@
+body {
+    font-style: sans-serif;
+    /*font-size: 10px;*/
+}
+
+.wrapper {
+    width: 90%;
+    margin: auto;
+    font-size: 2em;
+}
+
+.dice {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 1.2em;
+}
+
+.dice span {
+margin: auto;
+border: 1px solid #777;
+padding: 0.8em;
+background: #EEE;
+}
+
+.roll-dice button {
+    display: block;
+    margin: auto;
+    font-size: 2em;
+}
