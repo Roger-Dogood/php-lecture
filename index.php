@@ -3,13 +3,13 @@
 // $num_generator = mt_rand(1, 6);
 $dice = array();
 
-if (!empty($_POST['submit']))
-{
-    for ($i = 0; $i < 6; $i++)
+//if (!empty($_POST['submit']))
+//{
+    for ($i = 0; $i < 12; $i++)
     {
       $dice[] = mt_rand(1, 6);
     }
-}
+//}
 ?>
 <!DOCTYPE html>
 <html lang="en">
