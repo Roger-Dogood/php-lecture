@@ -1,11 +1,12 @@
 <?php
-include 'Foo/Dice.php';
+use Foo\Dice;
+
+require_once 'Foo/Dice.php';
 
 # Creates a new instance of our Dice object.
-$dice = new Dice();
+$dice = new Dice(6);
 
-if (!empty($_POST['submit']))
-{
+if (!empty($_POST['submit'])) {
     $dice->roll();
 }
 ?>
@@ -13,7 +14,7 @@ if (!empty($_POST['submit']))
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dice Test</title>
+    <title>OOP-Method | Dice</title>
     <link rel="stylesheet" href="style.css" media="screen" charset="utf-8">
 </head>
 <body>
@@ -22,7 +23,7 @@ if (!empty($_POST['submit']))
         <h1>My Dice</h1>
 
         <div class="dice">
-            <?php foreach ($dice->getDice() as $die): ?>
+            <?php foreach ($dice->dice as $die) : ?>
             <span><?= $die; ?></span>
             <?php endforeach; ?>
         </div>
