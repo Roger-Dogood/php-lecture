@@ -19,6 +19,7 @@ body {
 	border: 1px solid #777;
 	padding: 0.8em;
 	background: #EEE;
+	-moz-animation: roll 0.4s;
 	-webkit-animation: roll 0.4s;
 	animation: roll 0.4s;
 	transition: animation 0.3s,
@@ -35,6 +36,7 @@ body {
 }
 
 .dice span:nth-child(odd) {
+	-moz-animation-delay: 0.2s;
 	-webkit-animation-delay: 0.2s;
 	animation-delay: 0.2s;
 }

@@ -1,6 +1,12 @@
 <?php
 namespace Foo {
 
+    /**
+     * A single die
+     *
+     * @property int $value Value of the current side of the die.
+     * @property mt_rand $numGenerator Random number generator used to simulate dice rolls.
+     */
     class SingleDie
     {
         # Numerical value of SingleDie
@@ -16,7 +22,7 @@ namespace Foo {
          */
         public function __construct()
         {
-            $this->numGenerator = mt_rand(1, 6);
+            self::$numGenerator = mt_rand(1, 6);
             $this->roll();
         }
 
@@ -27,7 +33,7 @@ namespace Foo {
          */
         public function __get($property)
         {
-            if (property_exists($this, $property)) {
+            if ($property != 'numGenerator' && property_exists($this, $property)) {
                 return $this->$property;
             }
 
@@ -48,7 +54,7 @@ namespace Foo {
          */
         protected function roll()
         {
-            $this->value = $this->numGenerator;
+            $this->value = self::$numGenerator;
         }
     }
 }

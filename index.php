@@ -4,7 +4,7 @@ use Foo\Dice;
 require_once 'Foo/Dice.php';
 
 # Creates a new instance of our Dice object.
-$dice = new Dice(6);
+$dice = new Dice(56);
 
 if (!empty($_POST['submit'])) {
     $dice->roll();
@@ -22,11 +22,7 @@ if (!empty($_POST['submit'])) {
 
         <h1>My Dice</h1>
 
-        <div class="dice">
-            <?php foreach ($dice->dice as $die) : ?>
-            <span><?= $die; ?></span>
-            <?php endforeach; ?>
-        </div>
+        <?= $dice ?>
 
         <form class="roll-dice" method="POST">
             <button type="submit" name="submit">Roll Dice</button>

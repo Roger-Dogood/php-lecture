@@ -3,6 +3,9 @@ namespace Foo {
 
     require 'SingleDie.php';
 
+    /**
+     *
+     */
     class Dice
     {
         # The dice array that will hold all of our
@@ -33,6 +36,15 @@ namespace Foo {
             if (property_exists($this, $property)) {
                 return $this->$property;
             }
+        }
+
+        public function __toString()
+        {
+            $string =  '<div class="dice">';
+            foreach ($this->dice as $die) {
+                $string .= "<span>$die</span>";
+            }
+            return $string . '</div>';
         }
 
         /**
