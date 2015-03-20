@@ -1,74 +1,94 @@
 body {
-	font-family: sans-serif;
+    font-family: 'Ubuntu Mono', monospace;
 }
 
 .wrapper {
-	width: 90%;
-	margin: auto;
-	font-size: 2em;
+    width: 90%;
+    margin: auto;
+    font-size: 2em;
 }
 
 .dice {
-	display: flex;
-	flex-flow: row wrap;
-	margin-bottom: 1.2em;
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 1.2em;
 }
 
 .dice span {
-	margin: 10px auto 0;
-	border: 1px solid #777;
-	padding: 0.8em;
-	background: #EEE;
-	-moz-animation: roll 0.4s;
-	-webkit-animation: roll 0.4s;
-	animation: roll 0.4s;
-	transition: animation 0.3s,
-		    color 0.3s,
-		    background-color 0.3s,
-		    border-color 0.3s,
-		    border-style 0.3s,
-		    font-weight 0.3s;
+    margin: 10px auto 0;
+    border: 1px solid #777;
+    padding: 0.8em;
+    background: #EEE;
+    -moz-animation: roll 0.4s;
+    -webkit-animation: roll 0.4s;
+    animation: roll 0.4s;
+    transition: animation 0.3s,
+    color 0.3s,
+    background-color 0.3s,
+    border-color 0.3s,
+    border-style 0.3s,
+    font-weight 0.3s;
 }
 
 .dice span:nth-child(even) {
-	-webkkit-animation-delay: 0.3s;
-	animation-delay: 0.3s;
+    -webkkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
 }
 
 .dice span:nth-child(odd) {
-	-moz-animation-delay: 0.2s;
-	-webkit-animation-delay: 0.2s;
-	animation-delay: 0.2s;
+    -moz-animation-delay: 0.2s;
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
 }
 
 .dice span:hover {
-	color: #EEE;
-	background: coral;
-	border-color: crimson;
-	border-style: dotted;
-	font-weight: bolder;
+    color: #EEE;
+    background: coral;
+    border-color: crimson;
+    border-style: dotted;
+    font-weight: bolder;
+}
+
+.roll-dice {
+
+    text-align: center;
 }
 
 .roll-dice button {
-	display: block;
-	margin: auto;
-	font-size: 2em;
+    font-family: 'Ubuntu Mono', monospace;
+    display: inline-block;
+    margin: auto;
+    margin-right: 20px;
+    font-size: 1.2em;
+}
+
+.dice-sum {
+    position: relative;
+    font-size: 1.2em;
+    border-top: 1px groove #666;
+}
+
+.dice-sum:before {
+    content: "Total:";
+    position: absolute;
+    top: -18px;
+    font-size: 0.35em;
 }
 
 @-webkit-keyframes roll {
-	from {
-		transform: rotate(0.5turn);
-	}
-	to {
-		transform: rotate(1turn);
-	}
+    from {
+        transform: rotate(0.5turn);
+    }
+    to {
+        transform: rotate(1turn);
+    }
 }
 
 @keyframes roll {
-	from {
-		transform: rotate(0.5turn);
-	}
-	to {
-		transform: rotate(1turn);
-	}
+    from {
+        transform: rotate(0.5turn);
+    }
+    to {
+        transform: rotate(1turn);
+    }
 }

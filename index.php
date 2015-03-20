@@ -1,12 +1,12 @@
 <?php
 use Foo\Dice;
 
-require_once 'Foo/Dice.php';
+require 'Foo/Dice.php';
 
 # Creates a new instance of our Dice object.
-$dice = new Dice(56);
+$dice = new Dice(6);
 
-if (!empty($_POST['submit'])) {
+if (isset($_POST['roll'])) {
     $dice->roll();
 }
 ?>
@@ -15,22 +15,24 @@ if (!empty($_POST['submit'])) {
 <head>
     <meta charset="UTF-8">
     <title>OOP-Method | Dice</title>
-    <link rel="stylesheet" href="style.css" media="screen" charset="utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <div class="wrapper">
 
         <h1>My Dice</h1>
 
-        <?= $dice ?>
-
         <form class="roll-dice" method="POST">
-            <button type="submit" name="submit">Roll Dice</button>
+            <button type="submit" name="roll">Roll Dice</button>
+            <span class="dice-sum"><?= $dice->diceSum(); ?></span>
         </form>
+
+        <?= $dice; ?>
 
     </div>
 
-    <pre><?php var_dump($dice); ?></pre>
+    <?php var_dump($dice); ?>
 
 </body>
 </html>

@@ -14,7 +14,7 @@ namespace Foo {
         # Variable to hold our mt_rand() separately
         # from the $value. This prevents the numbers
         # From being the same each roll for multiple Dice.
-        private static $numGenerator;
+        private $numGenerator;
 
         /**
          * Constructs the SingleDie object with
@@ -22,7 +22,7 @@ namespace Foo {
          */
         public function __construct()
         {
-            self::$numGenerator = mt_rand(1, 6);
+            $this->numGenerator = mt_rand(1, 6);
             $this->roll();
         }
 
@@ -30,13 +30,15 @@ namespace Foo {
          * Allows us to retrieve the $value of a SingleDie
          * object while keeping the $value from being
          * changed from outside class.
+         *
+         * @param  string $property Name of the property in the class
+         * @return varies           Value of the property
          */
         public function __get($property)
         {
             if ($property != 'numGenerator' && property_exists($this, $property)) {
                 return $this->$property;
             }
-
         }
 
         /**
@@ -45,16 +47,22 @@ namespace Foo {
          */
         public function __toString()
         {
-            return strval($this->value);
+            return '<span>' . strval($this->value) . '</span>';
         }
 
         /**
          * Every Die needs to be able to roll. This
          * allows us to roll each die individually.
+         * The initial scope of protected will only
+         * allow us to roll the SingleDie from inside
+         * of this class or any inherited classes.
+         *
+         * Change to public after Dice class is made.
          */
-        protected function roll()
+        #protected
+        public function roll()
         {
-            $this->value = self::$numGenerator;
+            $this->value = $this->numGenerator;
         }
     }
 }
