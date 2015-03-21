@@ -13,7 +13,7 @@ if (isset($_POST['roll']))
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">    
+    <meta charset="UTF-8">
     <meta name=viewport content="width=device-width, initial-scale=1">
     <title>Procedural-Method | Dice</title>
     <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -35,7 +35,7 @@ if (isset($_POST['roll']))
             <span><?= $die; ?></span>
             <?php endforeach; ?>
         </div>
-
+        
     </div>
 
     <pre><?php var_dump($dice); ?></pre>
