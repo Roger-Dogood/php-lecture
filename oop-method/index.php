@@ -32,7 +32,7 @@ if (isset($_POST['roll'])) {
 
             <div class="roll__count">
                 <label for="roll__count" class="roll__count-label">Count:</label> <!-- /.roll__count-label -->
-                <input type="number" id="roll__count" name="roll__count" class="roll__count-input" value="<?= $num__dice ?>" min="1" autocomplete="off" required> <!-- /.roll__count-input -->
+                <input type="number" id="roll__count" name="roll__count" class="roll__count-input" value="<?= $num__dice; ?>" min="1" autocomplete="off" required> <!-- /.roll__count-input -->
             </div> <!-- /.roll__count -->
 
             <div class="roll__dice">

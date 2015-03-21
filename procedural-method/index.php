@@ -35,7 +35,7 @@ if (isset($_POST['roll']))
 
             <div class="roll__count">
                 <label for="roll__count" class="roll__count-label">Count:</label> <!-- /.roll__count-label -->
-                <input type="number" id="roll__count" name="roll__count" class="roll__count-input" value="<?= $num__dice ?>" min="1" autocomplete="off" required> <!-- /.roll__count-input -->
+                <input type="number" id="roll__count" name="roll__count" class="roll__count-input" value="<?= $num__dice; ?>" min="1" autocomplete="off" required> <!-- /.roll__count-input -->
             </div> <!-- /.roll__count -->
 
             <div class="roll__dice">
@@ -44,7 +44,7 @@ if (isset($_POST['roll']))
 
             <div class="roll__sum">
                 <label for="roll__sum" class="roll__sum-label">Total:</label> <!-- /.roll__sum-label -->
-                <input type="text" id="roll__sum" name="roll__sum" class="roll__sum-input" size="4" value="<?= $dice__sum ?>" disabled> <!-- /.roll__sum-input -->
+                <input type="text" id="roll__sum" name="roll__sum" class="roll__sum-input" size="4" value="<?= $dice__sum; ?>" disabled> <!-- /.roll__sum-input -->
             </div> <!-- /.roll__sum -->
 
         </form> <!-- /.roll -->
