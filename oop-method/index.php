@@ -21,7 +21,7 @@ if (isset($_POST['roll'])) {
     <meta name=viewport content="width=device-width, initial-scale=1">
     <title>OOP-Method | Dice</title>
     <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="/style.css">
 </head>
 <body>
     <div class="wrapper">
@@ -43,7 +43,7 @@ if (isset($_POST['roll'])) {
                 <label for="roll__sum" class="roll__sum-label">Total:</label> <!-- /.roll__sum-label -->
                 <input type="text" id="roll__sum" name="roll__sum" class="roll__sum-input" size="4" value="<?= $dice->diceSum(); ?>" disabled> <!-- /.roll__sum-input -->
             </div> <!-- /.roll__sum -->
-            
+
         </form> <!-- /.roll -->
 
         <?= $dice; ?>
