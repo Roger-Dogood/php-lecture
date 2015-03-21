@@ -1,5 +1,30 @@
+* {
+    font-size: 1.2em;
+}
+
 body {
     font-family: 'Ubuntu Mono', monospace;
+    background: gainsboro;
+}
+
+h1 {
+    margin: 0.2em 0;
+}
+
+input,
+.dice span,
+button {
+    box-shadow: 0 0.05em 0.15em 0 rgba(0, 0, 0, 0.26);
+    border-radius: 0.1em;
+    transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0.2s;
+}
+
+input:active,
+.dice span:active,
+button:active {
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+    transition-delay: 0s;
 }
 
 .wrapper {
@@ -10,24 +35,23 @@ body {
 
 .dice {
     display: flex;
+    justify-content: center;
     flex-flow: row wrap;
     margin-bottom: 1.2em;
 }
 
 .dice span {
-    margin: 10px auto 0;
-    border: 1px solid #777;
+    margin: 0.2em 0.15em;
     padding: 0.8em;
     background: #EEE;
     -moz-animation: roll 0.4s;
     -webkit-animation: roll 0.4s;
     animation: roll 0.4s;
     transition: animation 0.3s,
-    color 0.3s,
-    background-color 0.3s,
-    border-color 0.3s,
-    border-style 0.3s,
-    font-weight 0.3s;
+                color 0.3s,
+                background-color 0.3s,
+                font-weight 0.3s,
+                box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .dice span:nth-child(even) {
@@ -44,35 +68,70 @@ body {
 .dice span:hover {
     color: #EEE;
     background: coral;
-    border-color: crimson;
-    border-style: dotted;
     font-weight: bolder;
 }
 
 .roll-dice {
-
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
     text-align: center;
+    border-bottom: 1px solid #DDD;
 }
 
-.roll-dice button {
-    font-family: 'Ubuntu Mono', monospace;
-    display: inline-block;
+.roll-button {
+    display: flex;
+    margin: auto 0.5em 0.3em;
+    /*padding: 0.3em 1em 0;*/
+}
+
+.roll-button button {
+    background-color: #4285f4;
+    color: #fff;
     margin: auto;
-    margin-right: 20px;
+    margin-bottom: 0;
+    width: 5em;
+    font-family: 'Ubuntu Mono', monospace;
     font-size: 1.2em;
+    border: none;
 }
 
+.roll-button button:hover {
+    background: #2C64C2;
+}
+
+.num-die,
 .dice-sum {
-    position: relative;
-    font-size: 1.2em;
-    border-top: 1px groove #666;
+    display: flex;
+    flex-flow: column;
+    max-width: 3em;
+    margin: auto 0 0.3em;
 }
 
-.dice-sum:before {
-    content: "Total:";
-    position: absolute;
-    top: -18px;
-    font-size: 0.35em;
+label {
+    font-size: 0.6em;
+}
+
+input {
+    font-size: 1.2em;
+    text-align: center;
+    border: none;
+    background: rgb(235, 235, 228);
+}
+
+.num-die input:hover {
+    background: rgb(213, 213, 204);
+}
+
+input:focus,
+button:focus {
+    outline: none;
+}
+
+.num-die input,
+.dice-sum input {
+    margin: auto;
+    font-family: 'Ubuntu Mono', monospace;
 }
 
 @-webkit-keyframes roll {

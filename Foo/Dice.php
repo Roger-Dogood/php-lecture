@@ -21,9 +21,9 @@ namespace Foo {
          * construct as many SingleDie objects as
          * we tell it to.
          */
-        public function __construct($capacity = '')
+        public function __construct($capacity = 0)
         {
-            if (empty($capacity)) {
+            if ((int)$capacity < 1) {
                 $capacity = 1;
             }
 
