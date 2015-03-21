@@ -13,9 +13,11 @@ if (isset($_POST['roll']))
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8">    
+    <meta name=viewport content="width=device-width, initial-scale=1">
     <title>Procedural-Method | Dice</title>
-    <link rel="stylesheet" href="style.css" media="screen" charset="utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <div class="wrapper">
