@@ -1,5 +1,14 @@
+* {
+    font-size: 1.2em;
+    font-family: 'Ubuntu Mono', monospace;
+}
+
 body {
-    font-style: sans-serif;
+    background: gainsboro;
+}
+
+h1 {
+    margin: 0.2em 0;
 }
 
 .wrapper {
@@ -8,21 +17,138 @@ body {
     font-size: 2em;
 }
 
+.roll {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    text-align: center;
+    border-bottom: 2px groove #CCC;
+}
+
+.roll__dice {
+    display: flex;
+    margin: auto 0.5em 0.3em;
+}
+
+.roll__dice-button {
+    background-color: #4285f4;
+    color: #fff;
+    margin: auto;
+    margin-bottom: 0;
+    width: 5em;
+    font-size: 1.2em;
+    border: none;
+}
+
+.roll__dice-button:hover {
+    background: #2C64C2;
+}
+
+.roll__count,
+.roll__sum {
+    display: flex;
+    flex-flow: column;
+    max-width: 3em;
+    margin: auto 0 0.3em;
+}
+
+.roll__count-label,
+.roll__sum-label {
+    font-size: 0.6em;
+}
+
+.roll__count-input,
+.roll__sum-input {
+    font-size: 1.2em;
+    text-align: center;
+    border: none;
+    background: rgb(235, 235, 228);
+}
+
+.roll__count-input:hover {
+    background: rgb(213, 213, 204);
+}
+
+.roll__count-input:focus,
+.roll__sum-input:focus,
+.roll__dice-button:focus {
+    outline: none;
+}
+
 .dice {
     display: flex;
+    justify-content: center;
     flex-flow: row wrap;
     margin-bottom: 1.2em;
 }
 
-.dice span {
-  margin: 10px auto 0;
-  border: 1px solid #777;
-  padding: 0.8em;
-  background: #EEE;
+.dice__single {
+    margin: 0.2em 0.15em;
+    padding: 0.8em;
+    background: #EEE;
+    -moz-animation: roll 0.4s;
+    -webkit-animation: roll 0.4s;
+    animation: roll 0.4s;
+    transition: animation 0.3s,
+                color 0.3s,
+                background-color 0.3s,
+                font-weight 0.3s,
+                box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.roll-dice button {
-    display: block;
-    margin: auto;
-    font-size: 2em;
+.dice__single:nth-child(even) {
+    -webkkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+}
+
+.dice__single:nth-child(odd) {
+    -moz-animation-delay: 0.2s;
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+}
+
+.dice__single:hover {
+    color: #EEE;
+    background: coral;
+    font-weight: bolder;
+}
+
+.roll__count-input,
+.roll__sum-input,
+.dice__single,
+.roll__dice-button {
+    box-shadow: 0 0.05em 0.15em 0 rgba(0, 0, 0, 0.26);
+    border-radius: 0.1em;
+    transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0.2s;
+}
+
+.roll__count-input:active,
+.roll__sum-input:active,
+.dice__single:active,
+.roll__dice-button:active {
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+    transition-delay: 0s;
+}
+
+/**
+ * Animations
+ */
+
+@-webkit-keyframes roll {
+    from {
+        transform: rotate(0.5turn);
+    }
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+@keyframes roll {
+    from {
+        transform: rotate(0.5turn);
+    }
+    to {
+        transform: rotate(1turn);
+    }
 }
