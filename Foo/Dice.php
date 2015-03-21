@@ -60,7 +60,7 @@ namespace Foo {
             foreach ($this->dice as $die) {
                 $string .= $die;
             }
-            return $string . PHP_EOL . '</div>';
+            return $string . PHP_EOL . '</div> <!-- /.dice -->';
         }
 
         /**

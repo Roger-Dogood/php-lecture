@@ -47,7 +47,7 @@ namespace Foo {
          */
         public function __toString()
         {
-            return '<span>' . strval($this->value) . '</span>';
+            return '<span class="dice__single">' . strval($this->value) . '</span> <!-- /.dice__single -->' . PHP_EOL;
         }
 
         /**
